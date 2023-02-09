@@ -104,7 +104,9 @@ async def dl_link(event):
     x = dtime
     xx = ts(int((ees - es).seconds) * 1000)
     xxxx = ts(int((eees - ees).seconds) * 1000)
-    dk = f"hello"
+    a1 = await info(dl, xxx)
+    a2 = await info(out, xxx)
+    dk = f"<b>File Name:</b> {newFile}\n\n<b>Original File Size:</b> {hbs(org)}\n<b>Encoded File Size:</b> {hbs(com)}\n<b>Encoded Percentage:</b> {per}\n\n<b>Get Mediainfo Here:</b> <a href='{a1}'>Before</a>/<a href='{a2}'>After</a>\n\n<i>Downloaded in {x}\nEncoded in {xx}\nUploaded in {xxxx}</i>"
     ds = await event.client.send_file(
         event.chat_id, file=ok, caption=dk, force_document=True, link_preview=False, thumb=thum, parse_mode="html"
     )
@@ -187,8 +189,6 @@ async def encod(event):
         aa = kk.split(".")[-1]
         rr = f"encode"
         bb = kk.replace(f".{aa}", ".mkv")
-        dd = bb.replace("@Anime_Gallery", "@animxt")
-        dd = dd.replace("720p", "720p x265 BD")
         newFile = dl.replace(f"downloads/", "").replace(f"_", " ")
         out = f"{rr}/{bb}"
         thum = "thumb.jpg"
@@ -239,9 +239,11 @@ async def encod(event):
         x = dtime
         xx = ts(int((ees - es).seconds) * 1000)
         xxx = ts(int((eees - ees).seconds) * 1000)
-        dk = f"hello"
+        a1 = await info(dl, e)
+        a2 = await info(out, e)
+        dk = f"<b>File Name:</b> {newFile}\n\n<b>Original File Size:</b> {hbs(org)}\n<b>Encoded File Size:</b> {hbs(com)}\n<b>Encoded Percentage:</b> {per}\n\n<b>Get Mediainfo Here:</b> <a href='{a1}'>Before</a>/<a href='{a2}'>After</a>\n\n<i>Downloaded in {x}\nEncoded in {xx}\nUploaded in {xxx}</i>"
         ds = await e.client.send_file(
-            e.chat_id, file=ok, force_document=True, caption=bb, link_preview=False, parse_mode="html"
+            e.chat_id, file=ok, force_document=True, caption=dk, link_preview=False, thumb=thum, parse_mode="html"
         )
         os.remove(dl)
         os.remove(out)
