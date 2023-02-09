@@ -187,8 +187,8 @@ async def encod(event):
         aa = kk.split(".")[-1]
         rr = f"encode"
         bb = kk.replace(f".{aa}", ".mkv")
-        bb = bb.replace("@Anime_Gallery", "@animxt")
-        bb = bb.replace("720p", "720p x265 BD")
+        dd = bb.replace("@Anime_Gallery", "@animxt")
+        dd = dd.replace("720p", "720p x265 BD")
         newFile = dl.replace(f"downloads/", "").replace(f"_", " ")
         out = f"{rr}/{bb}"
         thum = "thumb.jpg"
